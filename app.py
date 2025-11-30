@@ -61,7 +61,7 @@ with st.expander("Configuración de Interlocutores", expanded=True):
 
 # Archivo
 st.subheader("Archivo de Audio")
-uploaded_file = st.file_uploader("Sube tu audio", type=["mp3", "wav", "m4a", "ogg", "aac", "flac"])
+uploaded_file = st.file_uploader("Sube tu audio")
 
 # Botón de Acción
 if st.button("Transcribir y Generar Word", type="primary"):
@@ -159,3 +159,4 @@ if st.button("Transcribir y Generar Word", type="primary"):
         except Exception as e:
 
             st.error(f"Ocurrió un error: {str(e)}")
+
