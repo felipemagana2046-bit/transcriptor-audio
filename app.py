@@ -125,4 +125,14 @@ if st.button("Transcribir y Generar Word", type="primary"):
                     doc.save(tmp_docx.name)
                     tmp_docx_path = tmp_docx.name
                 
-                with open(tmp_docx_path,
+                with open(tmp_docx_path, "rb") as f:
+                    docx_data = f.read()
+
+                st.success("¡Listo!")
+                st.download_button("📥 Descargar Word", data=docx_data, file_name=docx_filename, mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document")
+                
+                os.unlink(tmp_file_path)
+                os.unlink(tmp_docx_path)
+
+        except Exception as e:
+            st.error(f"Error: {str(e)}")
