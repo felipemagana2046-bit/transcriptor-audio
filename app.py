@@ -61,7 +61,7 @@ with st.expander("Configuración de Interlocutores", expanded=True):
 
 # Archivo
 st.subheader("Archivo de Audio")
-uploaded_file = st.file_uploader("Sube tu audio", type=["mp3", "wav", "m4a", "ogg"])
+uploaded_file = st.file_uploader("Sube tu audio", type=["mp3", "wav", "m4a", "ogg", "aac", "flac"])
 
 # Botón de Acción
 if st.button("Transcribir y Generar Word", type="primary"):
@@ -157,4 +157,5 @@ if st.button("Transcribir y Generar Word", type="primary"):
                 os.unlink(tmp_docx_path)
 
         except Exception as e:
+
             st.error(f"Ocurrió un error: {str(e)}")
